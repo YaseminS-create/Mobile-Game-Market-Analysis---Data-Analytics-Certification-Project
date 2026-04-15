@@ -1,10 +1,11 @@
 # Mobile-Game-Market-Analysis---Data-Analytics-Certification-Project
 This project analyzes the mobile gaming market using two datasets with over 17,000 strategy games and the highest-grossing mobile games worldwide. The goal was to uncover patterns in ratings, pricing, revenue, and developer success and to identify which strategy games broke into the top-grossing tier.
 
-Project Overview
-This project analyzes the mobile gaming market using two datasets: a collection of over 17,000 iOS strategy games and a list of the highest-grossing mobile games worldwide. The goal was to understand patterns in ratings, pricing, monetization, and developer success, and to find out which strategy games made it into the top-grossing segment.
+---
 
-Repository Structure
+## Repository Structure
+
+```
 mobile-game-analysis/
 │
 ├── notebooks/
@@ -18,58 +19,151 @@ mobile-game-analysis/
 │   └── Highest_Grossing_Mobile_Game_cleaned.csv
 │
 └── README.md
+```
 
-Tools and Libraries
-CategoryToolsLanguagePython 3Data Wranglingpandas, numpyVisualizationmatplotlib, seaborn, plotlyInteractive UIipywidgetsEnvironmentJupyter Notebook
+---
 
-Part 1: Data Cleaning
-Notebook: datenbereinigung_games.ipynb
-Both datasets were loaded, inspected, and cleaned before any analysis took place. The raw files were never modified.
-Strategy Games Dataset
+## Tools and Libraries
 
-Standardized all column names to snake_case
-Removed columns not needed for analysis (URL, ID, Subtitle, Icon URL, Description)
-Removed duplicate records and trimmed all text fields
-Parsed date columns with error handling
-Converted numeric fields (price, size, ratings) safely
-Engineered additional features including file size in MB, in-app purchase statistics (min, max, average, count), language count, genre count, and plausibility flags for price, size, and rating
+| Category       | Tools                       |
+| -------------- | --------------------------- |
+| Language       | Python 3                    |
+| Data Wrangling | pandas, numpy               |
+| Visualization  | matplotlib, seaborn, plotly |
+| Interactive UI | ipywidgets                  |
+| Environment    | Jupyter Notebook            |
 
-Highest-Grossing Dataset
+---
 
-Standardized column names and cleaned text fields
-Parsed release dates
-Converted revenue to numeric
-Engineered features including publisher and genre lists, publisher and genre count, revenue in billions, and a validity flag for revenue values
+## Part 1: Data Cleaning
 
+Notebook: `datenbereinigung_games.ipynb`
 
-Part 2: Analysis
-Notebook: Mobile_Game_Analyse.ipynb
-Questions explored for Strategy Games
+Both datasets were loaded, inspected, and cleaned before analysis. The original raw files were not modified.
 
-How are user ratings distributed across the dataset?
-What is the relationship between review count and rating?
-How many games are free versus paid?
-Which developers have the most games in the dataset?
+### Strategy Games Dataset
 
-Questions explored for Highest-Grossing Games
+* Standardized column names to snake_case
+* Removed irrelevant columns (URL, ID, Subtitle, Icon URL, Description)
+* Removed duplicates and cleaned text fields
+* Parsed date columns with error handling
+* Converted numeric fields (price, size, ratings) safely
 
-Which genres generate the most revenue on average?
-Which publishers dominate the top-grossing charts?
+**Feature Engineering:**
 
-Merged Analysis
-Both datasets were joined via normalized game names since no shared primary key was available. This made it possible to flag strategy games that also appear in the highest-grossing list and compare them against the rest on metrics like average rating, review count, pricing, and in-app purchase usage.
-An interactive dashboard was built using ipywidgets and Plotly, allowing filtering by genre, price type, and grossing status.
+* File size in MB
+* In-app purchases: min, max, average, count
+* Language count
+* Genre count
+* Plausibility flags for price, size, and rating
 
-How to Run
-Clone the repository:
-bashgit clone https://github.com/YOUR_USERNAME/mobile-game-analysis.git
+---
+
+### Highest-Grossing Dataset
+
+* Standardized column names
+* Cleaned text fields
+* Parsed release dates
+* Converted revenue to numeric
+
+**Feature Engineering:**
+
+* Publisher list and count
+* Genre list and count
+* Revenue in billions
+* Revenue validity flag
+
+---
+
+## Part 2: Analysis
+
+Notebook: `Mobile_Game_Analyse.ipynb`
+
+### Strategy Games
+
+* Distribution of user ratings
+* Relationship between review count and rating
+* Free vs paid games
+* Developers with the most published games
+
+---
+
+### Highest-Grossing Games
+
+* Average revenue by genre
+* Dominant publishers in top charts
+
+---
+
+### Merged Analysis
+
+The datasets were merged using normalized game names since no shared primary key was available.
+
+This enabled:
+
+* Identification of strategy games in the top-grossing list
+* Comparison with non-top-grossing strategy games
+
+**Compared metrics:**
+
+* Average rating
+* Review count
+* Pricing model
+* In-app purchase usage
+
+---
+
+## Interactive Dashboard
+
+An interactive dashboard was built using ipywidgets and Plotly.
+
+**Features:**
+
+* Filter by genre
+* Filter by price type
+* Filter by grossing status
+
+---
+
+## How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/mobile-game-analysis.git
 cd mobile-game-analysis
-Install dependencies:
-bashpip install pandas numpy matplotlib seaborn plotly ipywidgets jupyter
-Run the notebooks in order. Start with datenbereinigung_games.ipynb to generate the cleaned CSV files, then open Mobile_Game_Analyse.ipynb for the full analysis.
+```
 
-Key Findings
-Free-to-play with in-app purchases is the dominant monetization model among top-grossing games. Highest-grossing strategy games show significantly higher review counts compared to other strategy games, suggesting that reach and visibility matter as much as game quality. A small number of publishers account for a disproportionate share of total revenue, pointing to high market concentration. Games available in more languages tend to perform better in terms of both ratings and review volume.
+### 2. Install dependencies
 
-Notes
-This project was completed as part of a Data Analytics certification. The datasets were sourced from Kaggle and are used here for educational purposes only.
+```bash
+pip install pandas numpy matplotlib seaborn plotly ipywidgets jupyter
+```
+
+### 3. Run notebooks
+
+1. Start with:
+   `datenbereinigung_games.ipynb`
+   generates cleaned datasets
+
+2. Then open:
+   `Mobile_Game_Analyse.ipynb`
+   performs analysis and visualization
+
+---
+
+## Key Findings
+
+* Free-to-play with in-app purchases dominates the market
+* Top-grossing strategy games have significantly higher review counts
+* A small number of publishers control a large share of revenue
+* Games available in multiple languages tend to perform better
+
+---
+
+## Notes
+
+This project was completed as part of a Data Analytics certification.
+
+Datasets were sourced from Kaggle and are used for educational purposes only.
+
