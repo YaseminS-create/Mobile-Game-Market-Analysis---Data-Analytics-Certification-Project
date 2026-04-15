@@ -167,3 +167,7 @@ This project was completed as part of a Data Analytics certification.
 
 Datasets were sourced from Kaggle and are used for educational purposes only.
 
+Author
+
+Yasemin
+
